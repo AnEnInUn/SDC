@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语音采集项目标准操作流程 (SOP)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">   
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+        }
+        .highlight-gradient-green {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0), rgba(34, 197, 94, 0.05));
+        }
+        .highlight-gradient-purple {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.05));
+        }
+        .highlight-gradient-amber {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0), rgba(245, 158, 11, 0.05));
+        }
+        .highlight-gradient-rose {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0), rgba(244, 63, 94, 0.05));
+        }
+        .highlight-gradient-cyan {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0), rgba(6, 182, 212, 0.05));
+        }
+        .step-number {
+            background: linear-gradient(135deg, var(--tw-gradient-stops));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+            
+            <!-- 标题卡片 -->
+            <div class="card md:col-span-4 md:row-span-1 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative">
+                    <div class="text-gray-500 text-lg font-medium mb-2">SOP-VD-2025-001</div>
+                    <div class="text-4xl md:text-5xl font-black text-gray-800 leading-tight">语音采集项目标准操作流程</div>
+                    <div class="mt-4 text-xl font-bold text-blue-600">Standard Operating Procedure for Voice Data Collection</div>
+                </div>
+            </div>
+
+            <!-- 版本信息卡片 -->
+            <div class="card md:col-span-2 md:row-span-1 p-6 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative">
+                    <div class="text-xl font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-file-signature text-green-500 mr-3"></i>版本信息</div>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-gray-600">
+                        <div><span class="font-medium">版本号：</span>V1.0</div>
+                        <div><span class="font-medium">制定日期：</span>2025-11-15</div>
+                        <div><span class="font-medium">制定部门：</span>XXX</div>
+                        <div><span class="font-medium">制定人：</span>XXX</div>
+                        <div><span class="font-medium">审核人：</span>XXX</div>
+                        <div><span class="font-medium">批准人：</span>XXX</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目阶段概览 -->
+            <div class="card md:col-span-2 md:row-span-1 p-6 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative">
+                    <div class="text-xl font-bold text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-sitemap text-purple-500 mr-3"></i>项目阶段概览</div>
+                    <div class="flex justify-between items-center text-center">
+                        <div class="flex-1">
+                            <div class="text-3xl font-black text-purple-600">1</div>
+                            <div class="text-sm text-gray-600 mt-1">项目启动</div>
+                        </div>
+                        <div class="text-gray-300 mx-2"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="flex-1">
+                            <div class="text-3xl font-black text-purple-600">2</div>
+                            <div class="text-sm text-gray-600 mt-1">语言与文本准备</div>
+                        </div>
+                        <div class="text-gray-300 mx-2"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="flex-1">
+                            <div class="text-3xl font-black text-purple-600">3</div>
+                            <div class="text-sm text-gray-600 mt-1">采集阶段</div>
+                        </div>
+                        <div class="text-gray-300 mx-2"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="flex-1">
+                            <div class="text-3xl font-black text-purple-600">4</div>
+                            <div class="text-sm text-gray-600 mt-1">标注阶段</div>
+                        </div>
+                        <div class="text-gray-300 mx-2"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="flex-1">
+                            <div class="text-3xl font-black text-purple-600">5</div>
+                            <div class="text-sm text-gray-600 mt-1">评测阶段</div>
+                        </div>
+                        <div class="text-gray-300 mx-2"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="flex-1">
+                            <div class="text-3xl font-black text-purple-600">6</div>
+                            <div class="text-sm text-gray-600 mt-1">交付归档</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第一阶段：项目启动 -->
+            <div class="card md:col-span-4 md:row-span-2 p-8 flex flex-col justify-between relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl font-bold text-blue-600">01</span>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">项目启动阶段</div>
+                            <div class="text-gray-500">Project Initiation Phase</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- 需求分析 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-blue-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-magnifying-glass-chart text-blue-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">需求分析</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 组织需求对接会</li>
+                                <li>• 采集核心需求信息</li>
+                                <li>• 整理需求文档</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 法务审核 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-blue-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-gavel text-blue-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">法务审核</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 起草法律文件</li>
+                                <li>• 内部合规评审</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 资源准备 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-blue-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-boxes-stacked text-blue-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">资源准备</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 人力资源配置</li>
+                                <li>• 场地设备准备</li>
+                                <li>• 工具资源配置</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二阶段：语言与文本准备 -->
+            <div class="card md:col-span-4 md:row-span-2 p-8 flex flex-col justify-between relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl font-bold text-green-600">02</span>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">前期语言与文本准备阶段</div>
+                            <div class="text-gray-500">Language & Text Preparation Phase</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- 语言研究 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-green-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-book-open-reader text-green-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">语言研究</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 构建字符集与音素集</li>
+                                <li>• 设计发音预测算法</li>
+                                <li>• 制定语言规则文档</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 文本设计 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-green-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-file-lines text-green-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">文本设计</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 语料收集与爬取</li>
+                                <li>• 文本清洗与筛选</li>
+                                <li>• 大模型辅助生成</li>
+                                <li>• 文本结构化处理</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 文本质检 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-green-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-circle-check text-green-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">文本质检</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 机器质检</li>
+                                <li>• 人工抽检</li>
+                                <li>• 音素覆盖检查</li>
+                                <li>• 形成质检报告</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三阶段：采集阶段 -->
+            <div class="card md:col-span-4 md:row-span-2 p-8 flex flex-col justify-between relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-amber"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl font-bold text-amber-600">03</span>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">采集阶段</div>
+                            <div class="text-gray-500">Data Collection Phase</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <!-- 发音人招募 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-amber-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-user-plus text-amber-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">发音人招募</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 发布招募信息</li>
+                                <li>• 资质筛选</li>
+                                <li>• 岗前培训</li>
+                                <li>• 建立发音人档案</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 场地设备准备 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-amber-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-microphone-lines text-amber-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">场地设备准备</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 场地布置</li>
+                                <li>• 设备配置</li>
+                                <li>• 设备调试</li>
+                                <li>• 环境测试</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 录音采集 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-amber-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-circle-record text-amber-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">录音采集</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 采集前准备</li>
+                                <li>• 试录与参数调整</li>
+                                <li>• 正式录音</li>
+                                <li>• 实时质检</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 音频初检 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-amber-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-wave-square text-amber-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">音频初检</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 机器自动检测</li>
+                                <li>• 人工抽检</li>
+                                <li>• 质量分级</li>
+                                <li>• 处理与反馈</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四阶段：标注阶段 -->
+            <div class="card md:col-span-4 md:row-span-2 p-8 flex flex-col justify-between relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-rose"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl font-bold text-rose-600">04</span>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">标注阶段</div>
+                            <div class="text-gray-500">Data Annotation Phase</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- ASR转写标注 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-rose-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-closed-captioning text-rose-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">ASR转写标注</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 标注员培训</li>
+                                <li>• 预转写处理</li>
+                                <li>• 人工转写标注</li>
+                                <li>• 标注质检</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- TTS语音校对 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-rose-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-volume-high text-rose-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">TTS语音校对</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 文本一致性检查</li>
+                                <li>• 发音规范性检查</li>
+                                <li>• 质量分级评估</li>
+                                <li>• 问题处理与反馈</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 发音/韵律标注 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-rose-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-music text-rose-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">发音/韵律标注</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 标注规则制定</li>
+                                <li>• 专业培训</li>
+                                <li>• 音素序列标注</li>
+                                <li>• 韵律特征标注</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第五阶段：评测阶段 -->
+            <div class="card md:col-span-4 md:row-span-2 p-8 flex flex-col justify-between relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-cyan"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl font-bold text-cyan-600">05</span>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">评测阶段</div>
+                            <div class="text-gray-500">Evaluation Phase</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- ASR评测 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-cyan-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-chart-line text-cyan-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">ASR评测</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 测试集准备</li>
+                                <li>• 模型部署与测试</li>
+                                <li>• 评测指标计算</li>
+                                <li>• 评测报告编制</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- TTS评测 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-cyan-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-comments text-cyan-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">TTS评测</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 测试方案设计</li>
+                                <li>• MOS主观评测</li>
+                                <li>• ABX相似度测试</li>
+                                <li>• 客观指标评估</li>
+                                <li>• 综合评测报告</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 结果复核 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-cyan-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-clipboard-check text-cyan-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">结果复核</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 评审会议组织</li>
+                                <li>• 结果验证</li>
+                                <li>• 改进方案制定</li>
+                                <li>• 决策与执行</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第六阶段：交付与归档 -->
+            <div class="card md:col-span-4 md:row-span-2 p-8 flex flex-col justify-between relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl font-bold text-purple-600">06</span>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">交付与归档阶段</div>
+                            <div class="text-gray-500">Delivery & Archiving Phase</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- 数据格式化 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-purple-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-file-code text-purple-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">数据格式化</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 格式规范制定</li>
+                                <li>• 数据整理</li>
+                                <li>• 格式转换</li>
+                                <li>• 质量检查</li>
+                                <li>• 打包压缩</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 最终质检 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-purple-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-shield-halved text-purple-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">最终质检</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 交付包完整性检查</li>
+                                <li>• 质量指标复核</li>
+                                <li>• 文档审核</li>
+                                <li>• 合规性检查</li>
+                                <li>• 最终验收</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 客户验收 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-purple-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-handshake-angle text-purple-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">客户验收</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 交付准备</li>
+                                <li>• 验收协助</li>
+                                <li>• 验收测试</li>
+                                <li>• 问题处理</li>
+                                <li>• 验收确认</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 项目复盘归档 -->
+                        <div class="bg-white/50 p-5 rounded-xl border border-purple-100">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-archive text-purple-500 text-xl mr-3"></i>
+                                <h3 class="text-lg font-bold text-gray-800">项目复盘归档</h3>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 项目复盘会议</li>
+                                <li>• 经验提炼</li>
+                                <li>• 文档整理</li>
+                                <li>• 归档存储</li>
+                                <li>• 知识传承</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目流程概览图 -->
+            <div class="card md:col-span-4 md:row-span-1 p-6 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative">
+                    <div class="text-xl font-bold text-gray-800 mb-4 text-center">项目流程概览</div>
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="flex flex-col items-center mb-4 md:mb-0">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-flag text-blue-600 text-2xl"></i>
+                            </div>
+                            <div class="text-sm font-medium text-gray-700">项目启动</div>
+                        </div>
+                        
+                        <div class="hidden md:block text-gray-300"><i class="fa-solid fa-arrow-right-long text-2xl"></i></div>
+                        <div class="md:hidden text-gray-300 mb-4"><i class="fa-solid fa-arrow-down-long text-2xl"></i></div>
+                        
+                        <div class="flex flex-col items-center mb-4 md:mb-0">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-file-alt text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="text-sm font-medium text-gray-700">文本准备</div>
+                        </div>
+                        
+                        <div class="hidden md:block text-gray-300"><i class="fa-solid fa-arrow-right-long text-2xl"></i></div>
+                        <div class="md:hidden text-gray-300 mb-4"><i class="fa-solid fa-arrow-down-long text-2xl"></i></div>
+                        
+                        <div class="flex flex-col items-center mb-4 md:mb-0">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-microphone text-amber-600 text-2xl"></i>
+                            </div>
+                            <div class="text-sm font-medium text-gray-700">录音采集</div>
+                        </div>
+                        
+                        <div class="hidden md:block text-gray-300"><i class="fa-solid fa-arrow-right-long text-2xl"></i></div>
+                        <div class="md:hidden text-gray-300 mb-4"><i class="fa-solid fa-arrow-down-long text-2xl"></i></div>
+                        
+                        <div class="flex flex-col items-center mb-4 md:mb-0">
+                            <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-tags text-rose-600 text-2xl"></i>
+                            </div>
+                            <div class="text-sm font-medium text-gray-700">数据标注</div>
+                        </div>
+                        
+                        <div class="hidden md:block text-gray-300"><i class="fa-solid fa-arrow-right-long text-2xl"></i></div>
+                        <div class="md:hidden text-gray-300 mb-4"><i class="fa-solid fa-arrow-down-long text-2xl"></i></div>
+                        
+                        <div class="flex flex-col items-center mb-4 md:mb-0">
+                            <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-magnifying-glass text-cyan-600 text-2xl"></i>
+                            </div>
+                            <div class="text-sm font-medium text-gray-700">质量评测</div>
+                        </div>
+                        
+                        <div class="hidden md:block text-gray-300"><i class="fa-solid fa-arrow-right-long text-2xl"></i></div>
+                        <div class="md:hidden text-gray-300 mb-4"><i class="fa-solid fa-arrow-down-long text-2xl"></i></div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-box-archive text-purple-600 text-2xl"></i>
+                            </div>
+                            <div class="text-sm font-medium text-gray-700">交付归档</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
